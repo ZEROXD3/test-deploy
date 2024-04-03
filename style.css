@@ -1,0 +1,30 @@
+body {
+    font-size: 15pt;
+    margin: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+body > h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.-tags {
+  outline: 2px solid red;
+  background-color: yellow;
+  padding: 10px;
+  margin: 20px
+}
+
+.heading > * {
+  outline: 1px solid blue;
+}
+
+.paragraph > * {
+  outline: 1px solid blue;
+}
+
+.containers > * {
+  outline: 1px solid blue;
+}
