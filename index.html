@@ -1,66 +1,99 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=devIce-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAKIB XD</title>
+  <style>
+    body {
+      background-color: black;
+      color: green;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+    }
 
-  <title>HTML most used tags rakib</title>
- 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
+    .header {
+      text-align: center;
+      padding-top: 20px; /* Add some padding to create space for the image */
+    }
+
+    .profile-img {
+      width: 100px; /* Adjust image width as needed */
+      height: 100px; /* Adjust image height as needed */
+      border-radius: 50%; /* Make it circular */
+      border: 2px solid green; /* Add border */
+      margin-bottom: 20px; /* Add some margin below the image */
+    }
+
+    .info {
+      animation: blink 1s infinite linear alternate-reverse;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .hacking-effect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      animation: glitch 1s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch {
+      0% {
+        transform: translate(-50%, -50%) translateX(-2px);
+      }
+      25% {
+        transform: translate(-50%, -50%) translateX(2px);
+      }
+      50% {
+        transform: translate(-50%, -50%) translateX(-2px);
+      }
+      75% {
+        transform: translate(-50%, -50%) translateX(2px);
+      }
+      100% {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    h1 {
+      font-size: 4em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
-
 <body>
-  
-  <h3>MOST USED HTML TAGS XD</h3>
-  
-  <!-- headIng tag -->
-  <div class="heading -tags">
-    <h1>I am h1</h1>
-    <h2>I am h2</h2>
-    <h3>I am h3</h3>
-    <h4>I am h4</h4>
-    <h5>I am h5</h5>
-    <h6>I am h6</h6>
-  </div>
-  
-  <div class="paragraph -tags">
-    <p>I am a p tag</p>
-    <span>I am a span tag</span> 
-    <i>I am i tag</i>
-    <!-- b and span ar same -->
-    <b>I am b tag</b>
-    <strong>I am strong tag</strong>
-    <a href="#">I am a/link tag</a>
-  </div>
-  
-  <!-- div, section, footer, header are same -->
-
-  <!-- div/sectIon/footer/header is used to create a group of elements like h1, p, strong or other divs. Thus, they are called containers -->
-  <div class="containers -tags">
-    
-    <div>
-      <h3>I am Inside a div</h3>
-      <p>me too!!</p>
+  <div class="header">
+    <img class="profile-img" src="arman.jpg" alt="Profile Picture">
+    <div class="hacking-effect">
+      <h2>RAKIB-XD</h2>
     </div>
-    
-    <sectIon>
-      <h3>I am Inside a sectIon</h3>
-      <p>me too!!</p>
-    </sectIon>
-    
-    <header>
-      <h3>I am Inside a header</h3>
-      <p>me too!!</p>
-    </header>
-    
-    <footer>
-      <h3>I am Inside a footer</h3>
-      <p>me too!!</p>
-    </footer>
-    
+    <div class="info">
+      <p id="telegramID">Telegram ID: @Alex566902</p>
+      <p id="king">RAKIB XD</p>
+    </div>
   </div>
-  
+  <script>
+    function changeColor() {
+      var colors = ["red", "blue", "yellow", "orange", "purple", "cyan"]; // Add your desired colors here
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById("telegramID").style.color = randomColor;
+      document.getElementById("king").style.color = randomColor;
+    }
+
+    setInterval(changeColor, 1000); // Change color every 1000 milliseconds (1 second)
+  </script>
 </body>
 </html>
