@@ -6,12 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duplicate Remover</title>
 <style>
-  body {
-  background-image: url('RAKIB.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  }
+  <body>
+
+<h2>The picture Element</h2>
+
+<picture>
+  <source media="(min-width: 650px)" srcset="RAKIB.jpg">
+  <source media="(min-width: 465px)" srcset="RAKIB.jpg">
+  <img src="RAKIB.jpg" style="width:auto;">
+</picture>
   .container {
     max-width: 500px;
     margin: 0 auto;
