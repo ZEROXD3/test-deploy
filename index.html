@@ -1,23 +1,69 @@
 
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-body {
-  background-image: url('RAKIB.jpg');
-}
-</style>
-</head>
-<body>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duplicate Remover</title>
 <style>
+  body {
+  background-image: url('RAKIB.jpg');
+}
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+  }
+  textarea, .output {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  .total-lines {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
 
 <div class="container">
-  <h1>Duplicate Remover By MD Walid Mahmud</h1>
+  <h1>Duplicate Remover RAKIB XD</h1>
   <textarea id="userText" placeholder="Paste or type data here..."></textarea>
   <button onclick="removeDuplicates()">Remove Duplicates</button>
   <p id="totalLines" class="total-lines hidden">Total Lines: </p>
