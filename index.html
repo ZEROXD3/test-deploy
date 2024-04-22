@@ -1,6 +1,116 @@
-<video autoplay muted loop id="myVideo">
-  <source src="rakib.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duplicate Remover</title>
+<style>
+body {
+  background-image: url('RAKIB.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+  }
+  textarea, .output {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    background-color: #f9f9f9;
+    color: #333;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  .total-lines {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  .hidden {
+    display: none;
+  }
+  
+/* One value */
+p.one {
+  border-style: dotted;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Duplicate Remover</h1>
+  <p class="one">RAKIB XD.</p>
+  <textarea id="userText" placeholder="Paste or type data here..."></textarea>
+  <button onclick="removeDuplicates()">Remove Duplicates</button>
+  <p id="totalLines" class="total-lines hidden">Total Lines: </p>
+  <textarea id="output" class="output hidden" readonly></textarea>
+  <button id="copyButton" class="hidden" onclick="copyText()">Copy Output</button>
+</div>
+
+<script>
+  function removeDuplicates() {
+    const userInput = document.getElementById('userText').value;
+    const lines = userInput.split('\n');
+    const seenUids = new Set();
+    const output = [];
+
+    lines.forEach(line => {
+      const parts = line.split('|');
+      if (parts.length === 3 && !seenUids.has(parts[0])) {
+        seenUids.add(parts[0]);
+        output.push(line);
+      }
+    });
+
+    const totalLines = output.length;
+    document.getElementById('totalLines').textContent = `Total Lines: ${totalLines}`;
+    document.getElementById('totalLines').classList.remove('hidden');
+
+    document.getElementById('output').value = output.join('\n');
+    document.getElementById('output').classList.remove('hidden');
+    document.getElementById('copyButton').classList.remove('hidden');
+  }
+
+  function copyText() {
+    const outputText = document.getElementById('output');
+    outputText.select();
+    document.execCommand('copy');
+  }
+</script>
+
 </body>
 </html>
